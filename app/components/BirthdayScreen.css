@@ -1,0 +1,283 @@
+.birthday-screen {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #ffffff 0%,
+      #fff8f5 45%,
+      #fdeaf1 100%
+    );
+
+  animation: fade-in 0.8s ease;
+
+  overflow: hidden;
+}
+
+.birthday-instruction {
+  margin: 100px 0 0;
+
+  font-size: large;
+  line-height: 1.6;
+
+  color: #806070;
+}
+
+/* -----------------------------
+   CAKE AREA
+----------------------------- */
+
+.cake {
+  position: relative;
+
+  width: min(500px, 95vw);
+  height: 390px;
+
+  margin-top: 10px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Your cake photo */
+
+.cake-image {
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 100%;
+  max-width: 500px;
+  max-height: 360px;
+
+  object-fit: contain;
+
+  z-index: 1;
+
+  filter:
+    drop-shadow(
+      0 15px 20px rgba(80, 50, 60, 0.15)
+    );
+}
+
+/* -----------------------------
+   CANDLES
+----------------------------- */
+
+.candles {
+  position: absolute;
+
+  top: 48px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 260px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  gap: 22px;
+
+  z-index: 5;
+}
+
+.candle {
+  position: relative;
+
+  width: 65px;
+  height: 120px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.candle-left {
+  transform: rotate(-4deg);
+}
+
+.candle-middle {
+  transform: translateY(-12px);
+}
+
+.candle-right {
+  transform: rotate(4deg);
+}
+
+/* -----------------------------
+   CANDLE PHOTOS
+----------------------------- */
+
+.candle-stick {
+  display: block;
+
+  width: 200px;
+  height: 250px;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+
+  filter:
+    drop-shadow(
+      0 5px 8px rgba(60, 40, 50, 0.15)
+    );
+}
+
+.candle-stick.left,
+.candle-stick.middle,
+.candle-stick.right {
+  width: 500px;
+  height: 170px;
+}
+
+/* -----------------------------
+   AFTER BLOWING
+----------------------------- */
+
+.candle-stick {
+  animation: candle-appear 0.4s ease;
+}
+
+@keyframes candle-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* -----------------------------
+   MICROPHONE
+----------------------------- */
+
+.mic-status {
+  margin-top: -5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  z-index: 10;
+}
+
+.mic-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  font-size: 1.7rem;
+
+  box-shadow:
+    0 8px 25px rgba(216, 111, 155, 0.15);
+
+  animation: mic-pulse 1.5s ease-in-out infinite;
+}
+
+.mic-status p {
+  margin: 0;
+
+  font-size: 0.9rem;
+
+  color: #806070;
+}
+
+@keyframes mic-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* -----------------------------
+   MICROPHONE ERROR
+----------------------------- */
+
+.mic-error {
+  margin-top: 15px;
+
+  max-width: 420px;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  color: #9b4f68;
+
+  background: rgba(255, 220, 230, 0.8);
+
+  border: 1px solid rgba(216, 111, 155, 0.2);
+
+  font-size: 0.85rem;
+}
+
+/* -----------------------------
+   MOBILE
+----------------------------- */
+
+@media (max-width: 600px) {
+
+  .birthday-instruction {
+    font-size: 1.9rem;
+  }
+
+  .cake {
+    width: 100vw;
+    height: 330px;
+  }
+
+  .cake-image {
+    width: 95vw;
+    max-height: 310px;
+  }
+
+  .candles {
+    top: 15px;
+
+    width: 220px;
+
+    gap: 12px;
+  }
+
+  .candle {
+    width: 55px;
+    height: 105px;
+  }
+
+  .candle-stick,
+  .candle-stick.left,
+  .candle-stick.middle,
+  .candle-stick.right {
+    width: 55px;
+    height: 105px;
+  }
+}
