@@ -1,5 +1,11 @@
+
+/* ==============================
+   BIRTHDAY SCREEN
+   ============================== */
+
 .birthday-screen {
   position: relative;
+  overflow: hidden;
 
   background:
     radial-gradient(
@@ -10,22 +16,24 @@
     );
 
   animation: fade-in 0.8s ease;
-
-  overflow: hidden;
 }
+
+
+/* ==============================
+   INSTRUCTION
+   ============================== */
 
 .birthday-instruction {
   margin: 100px 0 0;
-
   font-size: large;
   line-height: 1.6;
-
   color: #806070;
 }
 
-/* -----------------------------
-   CAKE AREA
------------------------------ */
+
+/* ==============================
+   CAKE
+   ============================== */
 
 .cake {
   position: relative;
@@ -40,19 +48,17 @@
   justify-content: center;
 }
 
-/* Your cake photo */
-
 .cake-image {
   position: absolute;
 
   bottom: 0;
   left: 50%;
 
-  transform: translateX(-50%);
-
   width: 100%;
   max-width: 500px;
   max-height: 360px;
+
+  transform: translateX(-50%);
 
   object-fit: contain;
 
@@ -64,20 +70,20 @@
     );
 }
 
-/* -----------------------------
+
+/* ==============================
    CANDLES
------------------------------ */
+   ============================== */
 
 .candles {
   position: absolute;
 
   top: 48px;
-
   left: 50%;
 
-  transform: translateX(-50%);
-
   width: 260px;
+
+  transform: translateX(-50%);
 
   display: flex;
   align-items: flex-end;
@@ -111,9 +117,14 @@
   transform: rotate(4deg);
 }
 
-/* -----------------------------
+
+/* ==============================
    CANDLE PHOTOS
------------------------------ */
+   ============================== */
+
+/*
+   Same candle size on desktop AND mobile.
+*/
 
 .candle-stick {
   display: block;
@@ -124,7 +135,6 @@
   object-fit: contain;
 
   user-select: none;
-
   pointer-events: none;
 
   transition:
@@ -135,22 +145,14 @@
     drop-shadow(
       0 5px 8px rgba(60, 40, 50, 0.15)
     );
-}
 
-.candle-stick.left,
-.candle-stick.middle,
-.candle-stick.right {
-  width: 500px;
-  height: 170px;
-}
-
-/* -----------------------------
-   AFTER BLOWING
------------------------------ */
-
-.candle-stick {
   animation: candle-appear 0.4s ease;
 }
+
+
+/* ==============================
+   CANDLE APPEAR ANIMATION
+   ============================== */
 
 @keyframes candle-appear {
   from {
@@ -164,9 +166,10 @@
   }
 }
 
-/* -----------------------------
-   MICROPHONE
------------------------------ */
+
+/* ==============================
+   MICROPHONE STATUS
+   ============================== */
 
 .mic-status {
   margin-top: -5px;
@@ -174,10 +177,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   gap: 8px;
 
   z-index: 10;
 }
+
+.mic-status p {
+  margin: 0;
+
+  font-size: 0.9rem;
+  color: #806070;
+}
+
+
+/* ==============================
+   MICROPHONE ICON
+   ============================== */
 
 .mic-icon {
   width: 58px;
@@ -199,14 +215,6 @@
   animation: mic-pulse 1.5s ease-in-out infinite;
 }
 
-.mic-status p {
-  margin: 0;
-
-  font-size: 0.9rem;
-
-  color: #806070;
-}
-
 @keyframes mic-pulse {
   0%,
   100% {
@@ -218,15 +226,15 @@
   }
 }
 
-/* -----------------------------
+
+/* ==============================
    MICROPHONE ERROR
------------------------------ */
+   ============================== */
 
 .mic-error {
-  margin-top: 15px;
-
   max-width: 420px;
 
+  margin-top: 15px;
   padding: 12px 18px;
 
   border-radius: 12px;
@@ -240,9 +248,10 @@
   font-size: 0.85rem;
 }
 
-/* -----------------------------
+
+/* ==============================
    MOBILE
------------------------------ */
+   ============================== */
 
 @media (max-width: 600px) {
 
@@ -260,24 +269,26 @@
     max-height: 310px;
   }
 
+  /*
+     Keep the candle IMAGE size identical
+     to desktop: 200px × 250px.
+  */
+
   .candles {
-    top: 15px;
+    top: 48px;
 
-    width: 220px;
-
-    gap: 12px;
+    width: 260px;
+    gap: 22px;
   }
 
   .candle {
-    width: 55px;
-    height: 105px;
+    width: 65px;
+    height: 120px;
   }
 
-  .candle-stick,
-  .candle-stick.left,
-  .candle-stick.middle,
-  .candle-stick.right {
-    width: 55px;
-    height: 105px;
+  .candle-stick {
+    width: 150px;
+    height: 200px;
   }
 }
+
