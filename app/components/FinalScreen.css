@@ -254,46 +254,36 @@
    ========================= */
 
 @media (max-width: 600px) {
-
   .sticker {
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
   }
 
-  /* Top-left */
   .sticker1 {
-    top: -8%;
-    left: -12%;
+    top: -50%;
+    left: -2%;
   }
 
-  /* Top-right */
   .sticker2 {
-    top: -6%;
-    right: -12%;
+    top: -50%;
+    right: -2%;
   }
 
-  /* Middle-left */
   .sticker3 {
-    top: 38%;
-    left: -18%;
-  }
-
-  /* Middle-right */
-  .sticker4 {
-    top: 38%;
-    right: -20%;
-  }
-
-  /* Bottom-left */
-  .sticker5 {
-    bottom: -10%;
     left: -5%;
   }
 
-  /* Bottom-right */
-  .sticker6 {
-    bottom: -7%;
+  .sticker4 {
     right: -5%;
+  }
+
+  .sticker5 {
+    left: 2%;
+  }
+
+  .sticker6 {
+    bottom: -40%;
+    right: 2%;
   }
 }
 
